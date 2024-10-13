@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: addresses_dim
+    description: Demographics about each address such as country, state and zip code.
+    columns:
+     - name: address_id
+       tests:
+        - unique
+        - not_null
+  - name: events_dim
+    description: Demographics about each transacation such as order id, event id and the products ordered.
+    columns:
+     - name: event_id
+       tests:
+        - unique
+        - not_null
+  - name: order_items_dim
+    description: Demographics about each ordered item including its quantity.
+    columns:
+     - name: order_item_id
+       tests:
+        - unique
+        - not_null
+     - name: product_id
+       tests:
+        - unique
+        - not_null
+  - name: orders_dim
+    description: Demographics about each order such as user who ordered, any promos on the ordered item and all shipping details.
+    columns:
+     - name: order_id
+       tests:
+        - unique
+        - not_null
+  - name: products_dim
+    description: Demographics about each product such as price and its availability.
+    columns:
+     - name: product_id
+       tests:
+        - unique
+        - not_null
+  - name: promos_dim
+    description: Demographics about all the promos that are available, percent of discount and its status.
+    columns:
+     - name: promo_id
+       tests:
+        - unique
+        - not_null
+  - name: users_dim
+    description: Demographics about each user such as their address and contact details.
+    columns:
+     - name: user_id
+       tests:
+        - unique
+        - not_null
+  
